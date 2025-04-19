@@ -13,7 +13,7 @@ const AboutCard = ({
   className?: string;
 }) => {
   return (
-    <div className={`p-4 rounded-lg shadow-md flex flex-col sm:flex-row gap-4 items-start transition-all duration-300 hover:shadow-lg bg-orange-100/50 hover:bg-orange-200/50 border border-orange-200/50 ${className}`}>
+    <div className={`p-4 rounded-lg shadow-md flex flex-col sm:flex-row gap-4 items-start transition-all duration-300 hover:shadow-lg bg-white/80 backdrop-blur-sm hover:bg-orange-100/80 border border-orange-200/50 ${className}`}>
       <div className="text-therapyBlue">
         {icon}
       </div>
@@ -66,7 +66,7 @@ const AboutSection = () => {
               <img 
                 src={`${import.meta.env.BASE_URL}images/sunflower.png`} 
                 alt="Portrait" 
-                className="rounded-lg shadow-lg max-h-[400px] object-cover" 
+                className="rounded-lg shadow-md max-h-[400px] object-cover border border-orange-200/50" 
               />
             </div>
           </div>

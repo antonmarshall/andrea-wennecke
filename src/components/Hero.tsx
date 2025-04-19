@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
@@ -6,7 +5,12 @@ const Hero = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({
+      const headerOffset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
         behavior: 'smooth'
       });
     }
@@ -31,8 +35,8 @@ const Hero = () => {
             </button>
           </div>
         </div>
-        <div className="hidden md:block max-w-lg mx-auto">
-          <img alt="Kreativtherapie Artwork" className="rounded-lg shadow-xl max-w-full h-auto object-scale-down" src={`${import.meta.env.BASE_URL}images/hero-artwork.png`} />
+        <div className="hidden md:block max-w-lg mx-auto p-4 rounded-lg shadow-xl bg-white/80 backdrop-blur-sm border border-orange-200/50">
+          <img alt="Kreativtherapie Artwork" className="rounded-lg shadow-md max-w-full h-auto object-scale-down border border-orange-200/50" src={`${import.meta.env.BASE_URL}images/hero-artwork.png`} />
         </div>
       </div>
     </section>;

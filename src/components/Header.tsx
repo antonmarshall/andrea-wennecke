@@ -1,10 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowLeft } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isLegalPage = location.pathname === '/impressum' || location.pathname === '/datenschutz';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,7 +16,7 @@ const Header = () => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Adjusted the detection area to make it more reliable
+          // Adjusted threshold to account for header height and some padding
           return rect.top <= 150 && rect.bottom >= 0;
         }
         return false;
@@ -25,21 +28,44 @@ const Header = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Call handleScroll once on mount to set the initial active section
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
+  const handleNavigation = (id: string) => {
+    // Wenn wir auf einer Legal-Seite sind, navigiere zuerst zur Hauptseite
+    if (isLegalPage) {
+      navigate('/');
+      // Warte kurz, bis die Navigation abgeschlossen ist, bevor wir scrollen
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const headerOffset = 100; // Offset to account for fixed header
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    } else {
+      // Wenn wir bereits auf der Hauptseite sind, einfach scrollen
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 50; // Offset to account for fixed header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
     setIsMenuOpen(false);
-    setActiveSection(id);
   };
 
   const menuItems = [
@@ -54,9 +80,19 @@ const Header = () => {
 
   return (
     <header className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center rounded-xl bg-sky-900">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center rounded-b-xl bg-sky-800">
         <div className="flex items-center bg-transparent">
-          <h1 className="text-white text-xl font-medium">Andrea Wennecke</h1>
+          {isLegalPage ? (
+            <button
+              onClick={() => navigate('/')}
+              className="text-white hover:text-gray-200 transition-colors flex items-center"
+            >
+              <ArrowLeft size={20} className="mr-2" />
+              <span>Zurück</span>
+            </button>
+          ) : (
+            <h1 className="text-white text-xl font-medium">Andrea Wennecke</h1>
+          )}
         </div>
         
         {/* Desktop Menu */}
@@ -64,7 +100,7 @@ const Header = () => {
           {menuItems.map(item => (
             <button
               key={item.id}
-              onClick={() => scrollToSection(item.id)}
+              onClick={() => handleNavigation(item.id)}
               className={`px-4 py-2 rounded-2xl transition-all duration-300 text-orange-50 focus:outline-none
                 ${activeSection === item.id 
                   ? 'bg-therapyLightBlue/40 text-white font-medium' 
@@ -77,22 +113,31 @@ const Header = () => {
         
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-white p-2 rounded-lg transition-colors focus:outline-none" 
+          className="md:hidden text-white p-2 rounded-lg transition-colors focus:outline-none hover:bg-therapyLightBlue/20" 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       
       {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white p-4 shadow-lg absolute w-full">
-          <div className="flex flex-col space-y-1">
+      <div 
+        className={`md:hidden fixed inset-0 bg-black/50 transition-opacity duration-300 z-40
+          ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        onClick={() => setIsMenuOpen(false)}
+      />
+      <div 
+        className={`md:hidden fixed top-[72px] left-0 right-0 bg-white shadow-lg transition-transform duration-300 z-50
+          ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}
+      >
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex flex-col space-y-2">
             {menuItems.map(item => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`p-3 text-left rounded-2xl transition-colors duration-300 focus:outline-none
+                onClick={() => handleNavigation(item.id)}
+                className={`p-3 text-left rounded-2xl transition-all duration-300 focus:outline-none
                   ${activeSection === item.id 
                     ? 'bg-therapyBlue text-white font-medium' 
                     : 'text-therapyBlue hover:bg-therapyBlue/10'}`}
@@ -102,7 +147,7 @@ const Header = () => {
             ))}
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
