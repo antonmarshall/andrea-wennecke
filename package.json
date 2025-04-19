@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist --repo https://github.com/antonmarshall/andrea-wennecke.git",
     "go": "git add . && git commit -m \"Update website content\" && git push && npm run build && npm run deploy"
   },
   "dependencies": {
