@@ -2,7 +2,7 @@
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://antonmarshall.github.io/andrea-wennecke/",
+  "homepage": "https://antonmarshall.github.io/Andrea/",
   "type": "module",
   "scripts": {
     "dev": "vite",
