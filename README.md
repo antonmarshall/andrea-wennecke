@@ -1,5 +1,8 @@
 # Welcome to your Lovable project
 
+## Test Update
+This is a test update to verify our git push process.
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/913346cd-9711-493e-929e-2130cabf5bcf
