@@ -23,69 +23,38 @@ const ContactInfo = ({
 
 const ContactSection = () => {
   return <section id="contact" className="py-20 bg-orange-50">
-      <div className="container mx-auto px-4 bg-transparent">
-        <h2 className="text-3xl font-bold text-center mb-14 text-therapyBlue">Kontakt</h2>
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12 text-therapyBlue">Kontakt</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="px-[30px] mx-[30px]">
-            <h3 className="text-xl font-semibold mb-6">Kontaktieren Sie mich</h3>
-            <p className="text-gray-600 mb-8">
-              Haben Sie Fragen oder möchten Sie einen Termin vereinbaren? Ich freue mich
-              auf Ihre Nachricht und antworte so schnell wie möglich.
+        <div className="max-w-3xl mx-auto space-y-8">
+          <div className="p-6 rounded-lg shadow-md bg-white/80 backdrop-blur-sm border border-orange-200/50">
+            <h3 className="text-xl font-semibold mb-4 text-therapyBlue">Erstgespräch</h3>
+            <p className="text-gray-600 mb-4">
+              Termine vereinbare ich nach einem ersten telefonischen Kontakt. Dies ermöglicht mir, 
+              Ihre Situation besser einzuschätzen und sicherzustellen, dass ich Ihnen die bestmögliche 
+              Unterstützung bieten kann.
             </p>
-            
-            <div className="space-y-4">
-              <ContactInfo icon={<Phone size={24} />} title="Telefon">
-                <p>Tel: +49 451 47047/42</p>
-                <p>Mo-Fr: 9:00 - 17:00 Uhr</p>
-              </ContactInfo>
-              
-              <ContactInfo icon={<Mail size={24} />} title="E-Mail">
-                <p>info@kreativtherapie-wennecke.de</p>
-                <p className="text-sm italic">Antwortzeit innerhalb von 24 Stunden</p>
-              </ContactInfo>
-              
-              <ContactInfo icon={<MapPin size={24} />} title="Praxisadresse">
-                <p>Beckergrube 11</p>
-                <p>23552 Lübeck</p>
-                <a href="#" className="text-therapyBlue hover:underline text-sm">Anfahrtsbeschreibung</a>
-              </ContactInfo>
-              
-              <ContactInfo icon={<Clock size={24} />} title="Öffnungszeiten">
-                <p>Montag - Freitag: 9:00 - 18:00 Uhr</p>
-                <p>Samstag: Nach Vereinbarung</p>
-              </ContactInfo>
-            </div>
           </div>
-          
-          <div>
-            <h3 className="text-xl font-semibold mb-6">Nachricht senden</h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ContactInfo icon={<Phone size={24} />} title="Telefon">
+              <p>+49 451 47047/42</p>
+              <p className="text-sm text-gray-500 mt-1">Bitte hinterlassen Sie eine Nachricht, ich rufe Sie zurück.</p>
+            </ContactInfo>
             
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                <input id="name" type="text" placeholder="Ihr Name" className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-therapyBlue focus:border-therapyBlue bg-orange-50" />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">E-Mail</label>
-                <input id="email" type="email" placeholder="Ihre E-Mail" className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-therapyBlue focus:border-therapyBlue bg-orange-50" />
-              </div>
-              
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Betreff</label>
-                <input id="subject" type="text" placeholder="Betreff Ihrer Nachricht" className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-therapyBlue focus:border-therapyBlue bg-orange-50" />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Nachricht</label>
-                <textarea id="message" rows={5} placeholder="Ihre Nachricht" className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-therapyBlue focus:border-therapyBlue bg-orange-50"></textarea>
-              </div>
-              
-              <button type="submit" className="w-full text-white py-3 px-4 rounded-md transition duration-300 bg-sky-900 hover:bg-sky-800">
-                Nachricht senden
-              </button>
-            </form>
+            <ContactInfo icon={<Mail size={24} />} title="E-Mail">
+              <p>info@kreativtherapie-wennecke.de</p>
+            </ContactInfo>
+            
+            <ContactInfo icon={<MapPin size={24} />} title="Adresse">
+              <p>Beckergrube 11</p>
+              <p>23552 Lübeck</p>
+            </ContactInfo>
+            
+            <ContactInfo icon={<Clock size={24} />} title="Sprechzeiten">
+              <p>Mo-Fr: 9:00 - 18:00 Uhr</p>
+              <p className="text-sm text-gray-500 mt-1">Termine nach Vereinbarung</p>
+            </ContactInfo>
           </div>
         </div>
       </div>

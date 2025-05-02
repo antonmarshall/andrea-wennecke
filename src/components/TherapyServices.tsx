@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Palette, Brain, Music, Heart, User, Users } from 'lucide-react';
+import { Palette, Brain, Music, Heart, User, Users, BookOpen } from 'lucide-react';
 
 type TherapyCardProps = {
   icon: React.ReactNode;
@@ -31,44 +30,44 @@ const TherapyCard = ({
 const TherapyServices = () => {
   const therapyCards = [
     {
-      icon: <Palette size={32} />,
-      title: "Kunsttherapie",
-      description: "Durch freies Malen, Formen und kreative Materialien Zugang zu Emotionen finden.",
+      icon: <Brain size={32} />,
+      title: "Ausdrucksorientierte Psychotherapie",
+      description: "Ganzheitliche Therapieform, die verbale und nonverbale Ausdrucksmöglichkeiten verbindet.",
       borderColor: "border-therapyLightBlue",
       hoverColor: "hover:bg-therapyLightBlue/10"
     },
     {
-      icon: <Brain size={32} />,
-      title: "Körperorientierte Psychotherapie",
-      description: "Verbindung von Körper und Psyche zur ganzheitlichen Wohlbefinden.",
+      icon: <Palette size={32} />,
+      title: "Kunsttherapie",
+      description: "Therapeutische Begleitung durch künstlerische Prozesse und kreative Ausdrucksformen.",
       borderColor: "border-therapyPurple",
       hoverColor: "hover:bg-therapyPurple/10"
     },
     {
-      icon: <Music size={32} />,
-      title: "Ausdruckstherapie",
-      description: "Verschiedene kreative Ausdrucksformen nutzen, um Emotionen zu verarbeiten und neue Perspektiven zu gewinnen.",
+      icon: <Heart size={32} />,
+      title: "Traumatherapie",
+      description: "Behutsame Bearbeitung traumatischer Erfahrungen durch spezialisierte Methoden.",
       borderColor: "border-therapyPink",
       hoverColor: "hover:bg-therapyPink/10"
     },
     {
-      icon: <Heart size={32} />,
-      title: "Traumatherapie",
-      description: "Behutsame Bearbeitung traumatischer Erfahrungen durch kreative und körperorientierte Methoden.",
+      icon: <User size={32} />,
+      title: "Kinder & Jugendliche",
+      description: "Altersgerechte therapeutische Begleitung für junge Menschen in schwierigen Lebensphasen.",
       borderColor: "border-therapyRed",
       hoverColor: "hover:bg-therapyRed/10"
     },
     {
-      icon: <User size={32} />,
-      title: "Einzeltherapie",
-      description: "Individuell zugeschnittene Begleitung für persönliche Veränderungswünsche und Entwicklungsziele.",
+      icon: <Users size={32} />,
+      title: "Supervision",
+      description: "Professionelle Begleitung und Reflexion für Fachkräfte im psychosozialen Bereich.",
       borderColor: "border-therapyGreen",
       hoverColor: "hover:bg-therapyGreen/10"
     },
     {
-      icon: <Users size={32} />,
-      title: "Gruppentherapie",
-      description: "In kleinen Gruppen verschiedene Formen und gemeinsam kreative Lösungswege erarbeiten.",
+      icon: <BookOpen size={32} />,
+      title: "Weiterbildung",
+      description: "Qualifizierte Fortbildungsangebote für Fachkräfte in therapeutischen Berufen.",
       borderColor: "border-therapyTurquoise",
       hoverColor: "hover:bg-therapyTurquoise/10"
     }

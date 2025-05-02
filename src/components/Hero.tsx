@@ -15,8 +15,8 @@ const Hero = () => {
     <section id="home" className="relative min-h-[600px] flex items-center bg-gradient-to-b from-therapy-lightBlue/20 to-transparent">
       <div className="container mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="max-w-2xl">
-          <h1 className="text-5xl font-bold mb-3 text-therapy-blue">Andrea Wennecke</h1>
-          <h2 className="text-2xl mb-6 text-therapy-coral">Kreativtherapie in Lübeck</h2>
+          <h1 className="text-5xl font-bold mb-3 text-therapy-blue">Praxis für Psychotherapie & Kunsttherapie</h1>
+          <h2 className="text-2xl mb-6 text-therapy-coral">Andrea Wennecke - Lübeck</h2>
           <p className="text-lg mb-8 text-gray-600">
             Kunst- und Gestaltungstherapie, Psychotherapie, 
             Ausdruckstherapie: Traumaverarbeitung für 

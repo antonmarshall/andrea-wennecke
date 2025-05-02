@@ -61,8 +61,8 @@ const Header = () => {
 
   const menuItems = [
     { id: 'home', text: 'Home' },
-    { id: 'about', text: 'Über mich' },
     { id: 'therapy', text: 'Therapieangebote' },
+    { id: 'about', text: 'Über mich', link: '/about' },
     { id: 'prices', text: 'Preise' },
     { id: 'contact', text: 'Kontakt' },
     { id: 'directions', text: 'Anfahrt' },

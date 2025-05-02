@@ -1,8 +1,6 @@
-
 import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import AboutSection from '../components/AboutSection';
 import TherapyServices from '../components/TherapyServices';
 import Prices from '../components/Prices';
 import ContactSection from '../components/ContactSection';
@@ -16,7 +14,6 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <AboutSection />
         <TherapyServices />
         <Prices />
         <ContactSection />
