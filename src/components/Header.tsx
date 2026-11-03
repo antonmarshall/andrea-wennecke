@@ -11,7 +11,7 @@ const menuItems: MenuItem[] = [
   { id: 'therapy', text: 'Angebote', type: 'scroll' },
   { id: 'prices', text: 'Preise', type: 'scroll' },
   { id: 'contact', text: 'Kontakt', type: 'scroll' },
-  { id: 'about', text: 'Über mich', type: 'route', path: '/about' },
+  { id: 'about', text: 'Über mich', type: 'scroll' },
   { id: 'faq', text: 'FAQ', type: 'scroll' },
 ];
 
@@ -24,10 +24,24 @@ const Header = () => {
     location.pathname === '/impressum' || location.pathname === '/datenschutz';
   const isHomePage = location.pathname === '/';
 
+  // When navigating back from a subpage, scroll only after the homepage is rendered.
+  useEffect(() => {
+    if (!isHomePage) return;
+    const destination = (location.state as { scrollTo?: string } | null)?.scrollTo;
+    if (!destination) return;
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(destination)?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start',
+      });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [isHomePage, location.key, location.state]);
+
   useEffect(() => {
     if (!isHomePage) return;
 
-    const sections = ['home', 'therapy', 'prices', 'contact', 'directions', 'faq'];
+    const sections = ['home', 'therapy', 'about', 'prices', 'contact', 'directions', 'faq'];
     const handleScroll = () => {
       const current = sections.find((section) => {
         const element = document.getElementById(section);
@@ -48,7 +62,10 @@ const Header = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start',
+      });
     }
     setActiveSection(id);
   };
@@ -62,8 +79,7 @@ const Header = () => {
     }
 
     if (isLegalPage || !isHomePage) {
-      navigate('/');
-      setTimeout(() => scrollToSection(item.id), 100);
+      navigate('/', { state: { scrollTo: item.id } });
     } else {
       scrollToSection(item.id);
     }
