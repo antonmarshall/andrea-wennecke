@@ -71,7 +71,8 @@ const AboutSection = () => {
             <h3 id="about-more-heading" className="sr-only">
               Weitere Informationen über Andrea Wennecke
             </h3>
-            <div className="mb-12 space-y-4">
+            <div className="mb-10 rounded-2xl border border-[var(--border-card)] bg-[var(--surface-card)] p-6 sm:p-8">
+              <div className="mb-6 h-1 w-12 rounded-full bg-brand-accent" aria-hidden="true" />
               <p className="mt-5 text-lg font-medium leading-relaxed text-brand-primary">
                 Psychotherapeutin und Kunsttherapeutin in Lübeck.
               </p>
@@ -93,12 +94,12 @@ const AboutSection = () => {
 
             </div>
             <div className="mt-12">
-        <h2 className="mx-auto mb-6 max-w-4xl text-2xl font-bold text-brand-primary">
+        <h2 className="mx-auto mb-7 max-w-4xl text-2xl font-semibold tracking-tight text-brand-primary">
           Mein beruflicher Werdegang
         </h2>
 
         <div className="mx-auto max-w-4xl space-y-8">
-          <div className="p-6 rounded-lg shadow-md bg-white/80 backdrop-blur-sm border border-[var(--border-subtle)]">
+          <div className="p-6 rounded-2xl shadow-sm bg-[var(--surface-panel)] border border-[var(--border-subtle)]">
             <h2 className="text-2xl font-semibold mb-4 text-brand-primary">Qualifikationen & Ausbildung</h2>
             
             <div className="space-y-6">
@@ -129,7 +130,7 @@ const AboutSection = () => {
             </div>
           </div>
           
-          <div className="p-6 rounded-lg shadow-md bg-white/80 backdrop-blur-sm border border-[var(--border-subtle)]">
+          <div className="p-6 rounded-2xl shadow-sm bg-[var(--surface-panel)] border border-[var(--border-subtle)]">
             <h2 className="text-2xl font-semibold mb-4 text-brand-primary">Berufserfahrung</h2>
             
             <div className="space-y-6">
@@ -151,7 +152,7 @@ const AboutSection = () => {
             </div>
           </div>
           
-          <div className="p-6 rounded-lg shadow-md bg-white/80 backdrop-blur-sm border border-[var(--border-subtle)]">
+          <div className="p-6 rounded-2xl shadow-sm bg-[var(--surface-panel)] border border-[var(--border-subtle)]">
             <h2 className="text-2xl font-semibold mb-4 text-brand-primary">Therapeutischer Ansatz</h2>
             <p className="text-gray-600">
               Als studierte Psychologin und erfahrene Therapeutin verbinde ich wissenschaftlich fundierte 
