@@ -7,12 +7,15 @@
   /* Brand: change these tokens to update all related accents globally. */
   --brand-primary: #1a4a6e;
   --brand-primary-hover: #153d5c;
-  --brand-accent: #54735d;
-  --brand-accent-hover: #405b49;
+  --brand-accent: #a54436;
+  --brand-accent-hover: #88372c;
 
   /* Flächen & Text */
   --surface: #f4f0e8;
   --surface-elevated: #ffffff;
+  --surface-card: #dfe8e6; /* sanftes Blaugrün – Karten auf warmem Grund */
+  --surface-panel: #e7e4da; /* ruhiger warmer Stein – aufgeklappte Inhalte */
+  --border-card: #c5d1cc;
   --surface-muted: #ebe6dc;
   --text-primary: #1f2937;
   --text-secondary: #4b5563;
@@ -42,7 +45,7 @@
   --secondary-foreground: 220 15% 25%;
   --muted: 40 15% 92%;
   --muted-foreground: 220 10% 40%;
-  --accent: 12 48% 52%;
+  --accent: 7 51% 43%;
   --accent-foreground: 0 0% 100%;
   --border: 40 12% 82%;
   --input: 40 12% 82%;
