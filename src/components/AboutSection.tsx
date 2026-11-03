@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, GraduationCap, Award, Briefcase } from 'lucide-react';
 import { PORTRAIT_IMAGE } from '@/constants/images';
 
 const AboutSection = () => {
