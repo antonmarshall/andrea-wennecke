@@ -13,9 +13,9 @@
   /* Flächen & Text */
   --surface: #f4f0e8;
   --surface-elevated: #ffffff;
-  --surface-card: #dfe8e6; /* sanftes Blaugrün – Karten auf warmem Grund */
   --surface-panel: #e7e4da; /* ruhiger warmer Stein – aufgeklappte Inhalte */
-  --border-card: #c5d1cc;
+  --surface-card: var(--surface-panel); /* Karten nutzen denselben warmen Steinton */
+  --border-card: var(--border-subtle); /* einheitliche Rahmenfarbe */
   --surface-muted: #ebe6dc;
   --text-primary: #1f2937;
   --text-secondary: #4b5563;
