@@ -3,13 +3,13 @@ import { User, Users } from 'lucide-react';
 
 const Prices = () => {
   return (
-    <section id="prices" className="py-20 bg-surface-muted">
+    <section id="prices" className="border-t border-[var(--border-subtle)] bg-surface py-20 md:py-24">
       <div className="container mx-auto px-4">
         <h2 className="mb-12 text-center text-3xl font-bold text-brand-primary">
           Preise
         </h2>
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="rounded-lg bg-surface-elevated p-8 shadow-md transition-all duration-300 hover:shadow-lg">
+          <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--surface-card)] p-8 shadow-sm transition-shadow duration-300 hover:shadow-md">
             <div className="mb-6 flex items-center justify-center">
               <div className="rounded-full bg-brand-primary/10 p-3">
                 <User size={32} className="text-brand-primary" />
@@ -26,7 +26,7 @@ const Prices = () => {
             </p>
           </div>
 
-          <div className="rounded-lg bg-surface-elevated p-8 shadow-md transition-all duration-300 hover:shadow-lg">
+          <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--surface-card)] p-8 shadow-sm transition-shadow duration-300 hover:shadow-md">
             <div className="mb-6 flex items-center justify-center">
               <div className="rounded-full bg-brand-primary/10 p-3">
                 <Users size={32} className="text-brand-primary" />
