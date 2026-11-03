@@ -84,28 +84,43 @@ const TherapyServices = () => {
             id={`therapy-panel-${openService.id}`}
             role="region"
             aria-labelledby={`therapy-heading-${openService.id}`}
-            className="mt-8 animate-panel-in rounded-xl border border-[var(--border-subtle)] bg-surface-elevated p-6 md:p-10 shadow-md"
+            className="mt-7 overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--surface-panel)] shadow-sm animate-panel-in"
           >
             <div
-              className="mb-4 h-1 w-16 rounded-full"
+              className="h-1.5 w-full"
               style={{ backgroundColor: `var(${openService.colorVar})` }}
+              aria-hidden="true"
             />
-            <h3
-              id={`therapy-heading-${openService.id}`}
-              className="text-2xl font-bold text-brand-primary mb-2"
-            >
-              {openService.title}
-            </h3>
-            <p className="text-[var(--text-secondary)] mb-6 font-medium">
-              {openService.shortDescription}
-            </p>
-            <div className="max-w-none text-[var(--text-primary)] leading-relaxed space-y-4">
-              {openService.detailText.split('\n\n').map((paragraph, i) => (
-                <p key={i}>{paragraph}</p>
-              ))}
+            <div className="grid gap-7 px-6 py-8 sm:px-9 sm:py-10 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] md:gap-12 lg:px-12">
+              <div className="md:border-r md:border-[var(--border-subtle)] md:pr-10">
+                <h3
+                  id={`therapy-heading-${openService.id}`}
+                  className="text-2xl font-semibold leading-tight tracking-tight text-brand-primary"
+                >
+                  {openService.title}
+                </h3>
+                <p className="mt-4 text-base font-medium leading-[1.75] text-[var(--text-secondary)]">
+                  {openService.shortDescription}
+                </p>
+              </div>
+              <div className="max-w-[66ch] space-y-5 text-[var(--text-primary)]">
+                {openService.detailText.split('\n\n').map((paragraph, i) => (
+                  <p
+                    key={i}
+                    className={
+                      paragraph.startsWith('[Dieser Text ist ein Platzhalter')
+                        ? 'border-t border-[var(--border-subtle)] pt-5 text-sm leading-relaxed text-[var(--text-secondary)]'
+                        : 'text-base leading-[1.85] text-[var(--text-primary)]'
+                    }
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         )}
+
       </div>
     </section>
   );
