@@ -9,3 +9,18 @@
     @apply bg-surface text-[var(--text-primary)] tracking-wide leading-relaxed;
   }
 }
+
+/* Leave section headings visible below the sticky navigation when scrolling. */
+html {
+  scroll-padding-top: 5.75rem;
+}
+
+section[id] {
+  scroll-margin-top: 5.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
