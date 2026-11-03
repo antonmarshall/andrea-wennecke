@@ -14,8 +14,8 @@
   --surface: #f4f0e8;
   --surface-elevated: #fff9f2; /* warmes Off-White statt Reinweiß */
   --surface-panel: #f0e1d2; /* sanfter Sandton für die aufklappbaren Inhalte */
-  --surface-card: #e9c9ae; /* warmer Pfirsichton – Infokarten */
-  --border-card: #d0ad94; /* warme, dezente Kartenumrandung */
+  --surface-card: #ede2d5; /* dezenter warmer Sand für Infokarten, ohne Roséstich */
+  --border-card: var(--border-subtle); /* feine einheitliche Kartenumrandung */
   --surface-muted: #efe3d5; /* warmer Creme-Untergrund statt Graubeige */
   --text-primary: #1f2937;
   --text-secondary: #4b5563;
