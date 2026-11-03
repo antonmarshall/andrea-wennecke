@@ -27,7 +27,7 @@ const ContactSection = () => (
       </h2>
 
       <div className="mx-auto max-w-3xl space-y-8">
-        <div className="rounded-lg border border-[var(--border-subtle)] bg-surface-elevated p-6 shadow-md">
+        <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--surface-card)] p-6 sm:p-8 shadow-sm">
           <h3 className="mb-4 text-xl font-semibold text-brand-primary">
             Erstgespräch
           </h3>
