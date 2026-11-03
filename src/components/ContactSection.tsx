@@ -10,36 +10,34 @@ const ContactInfo = ({
   title: string;
   children: React.ReactNode;
 }) => (
-  <div className="mb-6 flex items-start">
-    <div className="mr-4 text-brand-primary">{icon}</div>
-    <div>
+  <div className="flex h-full items-start gap-4 rounded-xl border border-[var(--border-card)] bg-[var(--surface-elevated)] p-5 sm:p-6">
+    <div className="shrink-0 text-brand-primary">{icon}</div>
+    <div className="min-w-0">
       <h3 className="mb-1 font-semibold text-[var(--text-primary)]">{title}</h3>
-      <div className="text-[var(--text-secondary)]">{children}</div>
+      <div className="break-words text-[var(--text-secondary)]">{children}</div>
     </div>
   </div>
 );
 
 const ContactSection = () => (
-  <section id="contact" className="bg-surface py-20">
+  <section id="contact" className="border-t border-[var(--border-subtle)] bg-surface-muted pb-20 pt-14 md:pb-24 md:pt-16">
     <div className="container mx-auto px-4">
-      <h2 className="mb-12 text-center text-3xl font-bold text-brand-primary">
+      <h2 className="mb-9 text-center text-3xl font-bold text-brand-primary md:mb-11">
         Kontakt
       </h2>
 
-      <div className="mx-auto max-w-3xl space-y-8">
-        <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--surface-card)] p-6 sm:p-8 shadow-sm">
+      <div className="mx-auto max-w-4xl rounded-3xl border border-[var(--border-card)] bg-[var(--surface-elevated)] p-3 shadow-sm sm:p-5 md:p-6">
+        <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--surface-card)] p-6 sm:p-8">
           <h3 className="mb-4 text-xl font-semibold text-brand-primary">
             Erstgespräch
           </h3>
-          <p className="text-[var(--text-secondary)]">
-            Termine vereinbare ich nach einem ersten telefonischen Kontakt. Dies
-            ermöglicht mir, Ihre Situation besser einzuschätzen und
-            sicherzustellen, dass ich Ihnen die bestmögliche Unterstützung
-            bieten kann.
+          <p className="max-w-[66ch] leading-[1.8] text-[var(--text-secondary)]">
+            Am Anfang steht ein persönliches Gespräch. Sie können mir in Ruhe von Ihrem
+            Anliegen erzählen und wir besprechen gemeinsam die nächsten Schritte.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mt-3 grid grid-cols-1 gap-3 sm:mt-4 sm:grid-cols-2 sm:gap-4">
           <ContactInfo icon={<Phone size={24} />} title="Telefon">
             <p>+49 451 47047/42</p>
             <p className="mt-1 text-sm">
