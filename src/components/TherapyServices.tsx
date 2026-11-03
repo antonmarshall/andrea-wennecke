@@ -32,7 +32,10 @@ const TherapyServices = () => {
           werden noch von Andrea Wennecke ergänzt.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        {/* Responsive Flexbox centers the final row automatically:
+            1 card on phones, 2 on tablets, 4 on wide screens.
+            No special case for the last service: adding/removing offers keeps the layout balanced. */}
+        <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-4 md:gap-5">
           {therapyServices.map((service) => {
             const Icon = service.icon;
             const isOpen = openId === service.id;
@@ -45,12 +48,12 @@ const TherapyServices = () => {
                 aria-expanded={isOpen}
                 aria-controls={`therapy-panel-${service.id}`}
                 className={cn(
-                  'group relative flex min-h-[140px] flex-col items-center justify-center rounded-xl p-6 text-center text-white shadow-md transition-all duration-300',
+                  'group relative flex w-full shrink-0 flex-col items-center justify-center rounded-xl p-5 sm:p-6 text-center text-white shadow-md transition-all duration-300',
+                  'min-h-[156px] sm:min-h-[174px] lg:min-h-[184px]',
+                  'sm:w-[calc(50%-0.5rem)] md:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.9375rem)]',
                   'hover:shadow-lg hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring-focus)] focus-visible:ring-offset-2',
                   isOpen &&
-                    'ring-2 ring-white ring-offset-2 ring-offset-surface brightness-110 shadow-lg',
-                  service.id === 'cultural' &&
-                    'lg:col-span-3 lg:max-w-md lg:mx-auto lg:w-full'
+                    'ring-2 ring-white ring-offset-2 ring-offset-surface brightness-110 shadow-lg'
                 )}
                 style={{ backgroundColor: `var(${service.colorVar})` }}
               >
