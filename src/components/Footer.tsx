@@ -1,18 +1,19 @@
 import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleNavigation = (id: string) => {
-    if (window.location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: id } });
     } else {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById(id)?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start',
+      });
     }
   };
 
@@ -54,9 +55,13 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <Link to="/about" className="hover:text-white/80">
+                <button
+                  type="button"
+                  onClick={() => handleNavigation('about')}
+                  className="hover:text-white/80"
+                >
                   Über mich
-                </Link>
+                </button>
               </li>
               <li>
                 <button
