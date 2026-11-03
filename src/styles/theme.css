@@ -12,17 +12,17 @@
 
   /* Flächen & Text */
   --surface: #f4f0e8;
-  --surface-elevated: #ffffff;
-  --surface-panel: #e7e4da; /* ruhiger warmer Stein – aufgeklappte Inhalte */
-  --surface-card: var(--surface-panel); /* Karten nutzen denselben warmen Steinton */
-  --border-card: var(--border-subtle); /* einheitliche Rahmenfarbe */
-  --surface-muted: #ebe6dc;
+  --surface-elevated: #fff9f2; /* warmes Off-White statt Reinweiß */
+  --surface-panel: #f0e1d2; /* sanfter Sandton für die aufklappbaren Inhalte */
+  --surface-card: #e9c9ae; /* warmer Pfirsichton – Infokarten */
+  --border-card: #d0ad94; /* warme, dezente Kartenumrandung */
+  --surface-muted: #efe3d5; /* warmer Creme-Untergrund statt Graubeige */
   --text-primary: #1f2937;
   --text-secondary: #4b5563;
   --text-on-brand: #ffffff;
 
   /* Rahmen & Fokus */
-  --border-subtle: #d4cfc4;
+  --border-subtle: #d8c5b3;
   --ring-focus: #4a7c9b;
 
   /* Therapie-Kacheln (Grid) */
