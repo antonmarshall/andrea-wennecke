@@ -4,11 +4,11 @@
  * Alle Komponenten sollten diese Tokens nutzen.
  */
 :root {
-  /* Brand */
+  /* Brand: change these tokens to update all related accents globally. */
   --brand-primary: #1a4a6e;
   --brand-primary-hover: #153d5c;
-  --brand-accent: #c45c4a;
-  --brand-accent-hover: #b04f3f;
+  --brand-accent: #54735d;
+  --brand-accent-hover: #405b49;
 
   /* Flächen & Text */
   --surface: #f4f0e8;
