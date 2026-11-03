@@ -8,25 +8,45 @@ const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow container mx-auto px-8 py-12">
-        <div className="mx-auto mb-10 flex max-w-4xl flex-col items-center gap-6 md:flex-row md:items-start">
-          <div className="w-full max-w-xs shrink-0 overflow-hidden rounded-2xl border-4 border-surface-elevated shadow-lg">
-            <img
-              src={PORTRAIT_IMAGE}
-              alt="Andrea Wennecke"
-              className="aspect-[3/4] w-full object-cover object-top"
-            />
+      <main className="flex-grow pb-20">
+        <section aria-labelledby="about-page-heading" className="bg-gradient-to-b from-surface-muted to-surface pb-14 pt-12 sm:pt-16 md:pb-20">
+          <div className="mx-auto grid max-w-6xl items-center gap-9 px-5 sm:px-8 md:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] md:gap-14 lg:gap-20">
+            <div className="mx-auto w-full max-w-[420px] overflow-hidden rounded-2xl bg-surface-muted shadow-sm md:max-w-none">
+              <img
+                src={PORTRAIT_IMAGE}
+                alt="Andrea Wennecke"
+                className="aspect-[4/5] w-full object-cover object-top"
+              />
+            </div>
+            <div className="max-w-xl">
+              <p className="mb-4 text-sm font-medium tracking-[0.12em] text-brand-accent">
+                Die Person hinter der Praxis
+              </p>
+              <h1 id="about-page-heading" className="text-4xl font-semibold leading-tight tracking-tight text-brand-primary sm:text-5xl">
+                Andrea Wennecke
+              </h1>
+              <p className="mt-5 text-lg font-medium leading-relaxed text-brand-primary">
+                Psychotherapeutin und Kunsttherapeutin in Lübeck.
+              </p>
+              <p className="mt-6 text-base leading-[1.85] text-[var(--text-secondary)] sm:text-lg">
+                Als studierte Psychologin verbinde ich wissenschaftlich fundierte
+                therapeutische Methoden mit kreativen Ansätzen. Neben dem Gespräch
+                haben auch künstlerischer Ausdruck und Körperwahrnehmung ihren Platz.
+              </p>
+              <p className="mt-4 text-base leading-[1.85] text-[var(--text-secondary)]">
+                In meiner Praxis begleite ich Erwachsene und Jugendliche. Dabei ist mir
+                ein geschützter, respektvoller Rahmen wichtig, in dem unterschiedliche
+                Erfahrungen und Lebenswege Raum finden.
+              </p>
+              <div className="mt-8 border-t border-[var(--border-subtle)] pt-6">
+                <p className="text-sm font-medium leading-relaxed text-brand-primary">
+                  Psychologie · Kunsttherapie · Traumatherapie · Supervision
+                </p>
+              </div>
+            </div>
           </div>
-          <div>
-            <h1 className="mb-3 text-3xl font-bold text-brand-primary">
-              Andrea Wennecke
-            </h1>
-            <p className="leading-relaxed text-[var(--text-secondary)]">
-              Psychotherapeutin und Kunsttherapeutin in Lübeck.
-            </p>
-          </div>
-        </div>
-
+        </section>
+        <section className="mx-auto max-w-5xl px-5 pt-14 sm:px-8 md:pt-20">
         <h2 className="mx-auto mb-6 max-w-4xl text-2xl font-bold text-brand-primary">
           Mein beruflicher Werdegang
         </h2>
@@ -95,6 +115,7 @@ const About = () => {
             </p>
           </div>
         </div>
+        </section>
       </main>
       <Footer />
     </div>
