@@ -11,7 +11,7 @@ const Directions = () => {
 
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="space-y-6">
-            <div className="rounded-xl bg-surface-elevated p-6 shadow-lg">
+            <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--surface-card)] p-6 shadow-sm">
               <div className="flex items-start space-x-4">
                 <MapPin className="mt-1 text-brand-primary" size={24} />
                 <div>
@@ -27,7 +27,7 @@ const Directions = () => {
               </div>
             </div>
 
-            <div className="rounded-xl bg-surface-elevated p-6 shadow-lg">
+            <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--surface-card)] p-6 shadow-sm">
               <h3 className="mb-4 text-xl font-semibold text-brand-primary">
                 Öffentliche Verkehrsmittel
               </h3>
@@ -40,7 +40,7 @@ const Directions = () => {
               </ul>
             </div>
 
-            <div className="rounded-xl bg-surface-elevated p-6 shadow-lg">
+            <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--surface-card)] p-6 shadow-sm">
               <h3 className="mb-4 text-xl font-semibold text-brand-primary">
                 Parkmöglichkeiten
               </h3>
@@ -56,7 +56,7 @@ const Directions = () => {
           </div>
 
           <div className="relative">
-            <div className="aspect-[4/3] overflow-hidden rounded-xl border-4 border-surface-elevated shadow-xl">
+            <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-[var(--border-subtle)] shadow-sm">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2380.5952641547847!2d10.684799776947016!3d53.86821997259407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b2097dd7942ff3%3A0x5b9e244bd2a6c6c0!2sBeckergrube%2011%2C%2023552%20L%C3%BCbeck!5e0!3m2!1sde!2sde!4v1710669547439!5m2!1sde!2sde"
                 width="100%"
